@@ -7,9 +7,21 @@
 .banner{
     position: relative;
     overflow: hidden;
+    height: 110vh
 }
 
-.banner img{
+.banner:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.55);
+    z-index: -1;
+}
+
+.banner img, video{
     /* width: 100%; */
     position: absolute;
     top: 0;
@@ -30,6 +42,12 @@
     margin-bottom: 50px;
 }
 
+@media (width <= 480px){
+    .banner-title {
+        margin-top: 68px;
+    }
+}
+
 .banner .content-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -47,7 +65,8 @@
 .content {
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    width: max-content;
+    margin-left: auto;
 }
 
 @media (width <= 1024px){
@@ -69,7 +88,7 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 6px 6px 20px 20px;
     background-color: #B07C2E;
     width: 130px;
 }
@@ -77,19 +96,13 @@
 @media (width <= 480px ){
     .counter-time {
         padding: 6px;
-        width: unset;
+        width: 80px;
     }
 }
 
 .counter-date-container {
     max-width: 615px;
     margin-left: auto;
-}
-
-@media (width <= 768px){
-    .counter-date-container {
-        margin: 0 auto
-    }
 }
 
 /* Date */
@@ -100,20 +113,27 @@
     gap: 36px;
     margin-top: 130px;
 }
+@media (width <= 480px){
+    .date-container,
+    .venue-container {
+        margin-top: 26px;
+    }
+}
 
 .date,
 .venue{
     font-family: 'Open Sans';
     color: white;
-    font-size: 32px;
+    font-size: clamp(21px,3vw,32px);
     font-weight: 700;
+    
 }
 
 .number {
     font-family: Open-sans;
     font-family: 'Open Sans', sans-serif;
     color: white;
-    font-size: 40px;
+    font-size: clamp(20px,7vw,40px);
 }
 
 .text{
