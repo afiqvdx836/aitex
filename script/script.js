@@ -1,6 +1,6 @@
 
     // Set the target date for the countdown
-    var targetDate = new Date('2024-12-31').getTime();
+    var targetDate = new Date('2025-12-31').getTime();
 
     // Update the countdown every second
     var countdownInterval = setInterval(function() {
